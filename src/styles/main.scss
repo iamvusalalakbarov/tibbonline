@@ -201,6 +201,10 @@ section {
         border-radius: 5px;
         border: 1px solid #DBDDE0;
 
+        &:hover {
+          border-color: #10217D;
+        }
+
         p {
           line-height: 20px;
           color: black;

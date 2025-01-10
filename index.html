@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tibbonline</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -30,14 +31,14 @@
 
   <!-- Hero -->
   <section id="hero">
-    <div>
+    <div data-aos="fade-up">
       <h1>Sağlam <span>həyatın başlanğıcı</span> burada!</h1>
       <a href="#" class="secondary-button">Kataloqa keç</a>
     </div>
   </section>
 
   <!-- Latest News -->
-  <section id="latest-news" class="container">
+  <section id="latest-news" class="container" data-aos="fade-up">
     <div class="section-heading">
       <h2 class="heading"><span>Son</span> Xəbərlər</h2>
       <p>Tibbi xəbərlər səhiyyə sahəsindəki yeniliklərdən xəbərdar olmaq və sağlamlığınızı qorumaq üçün vacib məlumat mənbəyidir. Onlar xəstəliklərin qarşısını almaqda və müalicə yollarını daha yaxşı anlamaqda kömək edir.</p>
@@ -207,14 +208,14 @@
   </section>
 
   <!-- Advertisement -->
-  <section id="advertisement">
+  <section id="advertisement" data-aos="fade-up">
     <img src="/images/advertisement-banner.png" alt="Advertisement Banner">
   </section>
 
   <!-- Selected Medical Centers -->
   <section id="selected-medical-centers">
     <div class="container">
-      <div>
+      <div  data-aos="fade-up">
         <h2 class="heading">Seçilmiş <span>özəl</span> tibb mərkəzləri</h2>
 
         <div class="medical-center-cards">
@@ -299,7 +300,7 @@
   </section>
 
   <!-- Your Medical Market -->
-  <section id="your-medical-market">
+  <section id="your-medical-market" data-aos="fade-up">
     <div class="container">
       <div>
         <div class="medical-market-heading">
@@ -386,7 +387,7 @@
   </section>
 
   <!-- Selected News -->
-  <section id="selected-news" class="container">
+  <section id="selected-news" class="container" data-aos="fade-up">
     <div class="section-heading">
       <h2 class="heading"><span>Seçilmiş</span> Xəbərlər</h2>
       <p>Tibbi xəbərlər sağlamlıq haqqında ən son yeniliklər və müalicə metodları ilə bağlı məlumatlı olmağa kömək edir. Bu məlumatlar insanlara sağlam həyat tərzi seçmək və vaxtında düzgün qərarlar qəbul etmək üçün dəstək verir.</p>
@@ -467,7 +468,7 @@
   </section>
 
   <!-- Comments by Partners -->
-  <section id="comments-by-partners">
+  <section id="comments-by-partners" data-aos="fade-up">
     <div class="container">
       <h2 class="heading">Bizim <span>tərəfdaşlardan</span> dəyərli rəylər</h2>
     </div>
@@ -611,5 +612,9 @@
   </footer>
 
   <script type="module" src="/src/main.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({duration: 700, once: true, disable: 'mobile'});
+  </script>
 </body>
 </html>

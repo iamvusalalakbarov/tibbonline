@@ -1,6 +1,7 @@
 @use "sass:color";
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
 
 * {
   margin: 0;
@@ -74,7 +75,15 @@ a {
 }
 
 header {
-  display: flex;
+  background: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
+  .container {
+    display: flex;
   justify-content: space-between;
   align-items: center;
   padding-block: 28px;
@@ -145,6 +154,7 @@ header {
         background-color: color.scale(#10217D, $lightness: 10%);
       }
     }    
+  }
   }
 }
 
@@ -541,6 +551,139 @@ section {
                 background-color: #10217D;
                 color: white;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &#comments-by-partners {
+    margin-bottom: 80px;
+
+    .container .heading {
+      margin-bottom: 32px;
+    }
+
+    .comments {
+      padding: 80px 0;
+      background: linear-gradient(to bottom, #ECEEF9 0%, #ECEEF9 66%, white 66%, white 100%);
+
+      .container {
+        overflow: hidden;
+        position: relative;
+
+        .comments-swiper {
+          .swiper-slide {
+            .comment {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+      
+              .partner-image {
+                width: 420px;
+                height: 380px;
+                border-radius: 8px;
+                position: relative;
+                padding-bottom: 20px;
+                
+                &::after {
+                  content: '';
+                  position: absolute;
+                  left: 12px;
+                  top: 12px;
+                  width: 420px;
+                  height: 360px;
+                  border: 2px solid #1BA9B5;
+                  border-radius: 8px;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 8px;
+                  z-index: 10;
+                  position: relative;
+                }
+              }
+      
+              .comment-detail {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 90px;
+      
+                p {
+                  font-family: "Manrope", serif;
+                  max-width: 539px;
+                  font-weight: 300;
+                  font-size: 25px;
+                  line-height: 40px;
+                  color: #121212;
+                }
+      
+                & > div {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: start;
+      
+                  .partner-info {
+                    p {
+                      font-family: "Manrope", serif;
+                      font-weight: 700;
+                      font-size: 20px;
+                      line-height: 20px;
+                      color: #121212;
+                      margin-bottom: 14px;
+                    }
+      
+                    span {
+                      font-family: "Manrope", serif;
+                      font-weight: 700;
+                      font-size: 14px;
+                      line-height: 14px;
+                      color: #696969;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .partner-comment-buttons {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          position: absolute;
+          bottom: 24px;
+          right: 100px;
+          z-index: 10;
+
+          button {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            color: #121212;
+            
+            &.prev {
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+
+            &.next {
+
+            }
+
+            &.disabled {
+              color: #C7C9D9;
             }
           }
         }

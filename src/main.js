@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, EffectFade, EffectCards, Parallax } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import './styles/main.scss';
 
@@ -15,10 +15,11 @@ const medicalMarketSwiper = new Swiper('.medical-market-swiper', {
 });
 
 const commentsSwiper = new Swiper('.comments-swiper', {
-  modules: [Navigation],
+  modules: [Navigation, Autoplay],
   slidesPerView: 1,
   spaceBetween: 120,
-  speed: 700, 
+  speed: 700,
+  autoplay: true,
   navigation: {
     prevEl: '.partner-comment-buttons .prev',
     nextEl: '.partner-comment-buttons .next',

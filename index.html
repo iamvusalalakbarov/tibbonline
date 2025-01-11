@@ -7,6 +7,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+  <input type="checkbox" id="burger-menu">
   <header>
     <div class="container">
       <a href="/">
@@ -14,17 +15,24 @@
       </a>
   
       <nav>
-        <a href="/" class="active">Ana səhifə</a>
-        <a href="#">Haqqımızda</a>
-        <a href="#">Xəbərlər</a>
-        <a href="#">Əlaqə</a>
+        <a href="/" class="nav-link active">Ana səhifə</a>
+        <a href="#" class="nav-link">Haqqımızda</a>
+        <a href="#" class="nav-link">Xəbərlər</a>
+        <a href="#" class="nav-link">Əlaqə</a>
+
+        <p class="contact-text">
+          Bizə yazın <a href="mailto:info@tibbonline.az">info@tibbonline.az</a>
+        </p>
       </nav>
   
       <div>
-        <p>
+        <p class="contact-text">
           Bizə yazın <a href="mailto:info@tibbonline.az">info@tibbonline.az</a>
         </p>
         <a href="#">Kataloq</a>
+        <label for="burger-menu" class="burger-menu">
+          <span></span>
+        </label>
       </div>
     </div>
   </header>

@@ -21,6 +21,32 @@ a {
   color: unset;
 }
 
+input#burger-menu {
+  display: none;
+
+  &:checked ~ header {
+    nav {
+      @media (max-width: $lg) {
+        transform: translateX(0);
+      }
+    }
+
+    .burger-menu {
+      span {
+        background: transparent;
+
+        &::before {
+          transform: translateY(6px) rotate(45deg);
+        }
+
+        &::after {
+          transform: translateY(-6px) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
 .container {
   max-width: 1440px;
   padding-inline: 100px;
@@ -32,6 +58,20 @@ a {
 
   @media (max-width: $lg) {
     padding-inline: 16px;
+  }
+}
+
+.contact-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #10217D;
+
+  @media (max-width: $lg) {
+    display: none;
+  }
+
+  a {
+    font-weight: 700;
   }
 }
 
@@ -143,16 +183,42 @@ header {
       align-items: center;
       gap: 40px;
 
-      @media (max-width: $lg) {
+      .contact-text {
         display: none;
       }
 
-      a {
+      @media (max-width: $lg) {
+        flex-direction: column;
+        gap: 20px;
+        position: fixed;
+        top: 75px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        padding: 40px;
+        transform: translateX(100%);
+        transition: transform 300ms ease-in-out;
+
+        .contact-text {
+          display: block;
+          position: fixed;
+          bottom: 50px;
+        }
+      }
+
+      .nav-link {
         font-size: 14px;
         line-height: 20px;
         color: #121212;
         transition: all 300ms ease-in-out;
         position: relative;
+
+        @media (max-width: $lg) {
+          font-size: 20px;
+          font-weight: 500;
+          color: #10217D;
+        }
 
         &::after {
           content: '';
@@ -164,14 +230,26 @@ header {
           height: 4px;
           background-color: #0EA395;
           transition: width 300ms ease-in-out;
+
+          @media (max-width: $lg) {
+            display: none;
+          }
         }
 
         &.active {
           font-weight: 600;
+
+          @media (max-width: $lg) {
+            font-weight: 500;
+          }
         }
 
         &:hover, &.active {
           color: #527C88;
+
+          @media (max-width: $lg) {
+            color: #10217D;
+          }
 
           &::after {
             width: 100%;
@@ -184,20 +262,6 @@ header {
       display: flex;
       align-items: center;
       gap: 20px;
-
-      p {
-        font-size: 14px;
-        line-height: 20px;
-        color: #10217D;
-
-        @media (max-width: $lg) {
-          display: none;
-        }
-
-        a {
-          font-weight: 700;
-        }
-      }
 
       & > a {
         padding: 12px 22px;
@@ -218,7 +282,50 @@ header {
         &:hover {
           background-color: color.scale(#10217D, $lightness: 10%);
         }
-      }    
+      }
+
+      label.burger-menu {
+        display: none;
+
+        @media (max-width: $lg) {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          cursor: pointer;
+
+          span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: #10217D;
+            transition: background-color 300ms ease-in-out;
+            position: relative;
+
+            &::before, &::after {
+              content: '';
+              display: block;
+              width: 20px;
+              height: 2px;
+              background-color: #10217D;
+              position: absolute;
+              left: 0;
+              right: 0;
+              transition: transform 300ms ease-in-out;
+            }
+
+            &::before {
+              top: -6px;
+            }
+
+            &::after {
+              top: 6px;
+            }
+          }
+        }
+      }
     }
   }
 }

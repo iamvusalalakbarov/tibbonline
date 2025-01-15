@@ -425,11 +425,16 @@ section {
       background: url('../images/catalog-hero-bg.png') no-repeat center/cover;
     }
 
+    &.company-hero {
+      background: url('../images/company-hero-bg.png') no-repeat center/cover;
+    }
+
     @media (max-width: $lg) {
       height: 300px;
     }
 
     div {
+      max-width: 70%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -452,7 +457,7 @@ section {
 
       h1 {
         font-size: 44px;
-        line-height: 66px;
+        line-height: 57px;
         text-align: center;
         color: #10217D;
 
@@ -1254,6 +1259,76 @@ section {
 
         &:hover {
           text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Company
+
+  &#company {
+    padding-block: 35px;
+
+    .heading {
+      margin-bottom: 25px;
+    }
+
+    .info {
+      display: flex;
+      align-items: stretch;
+      gap: 22px;
+      height: 188px;
+
+      img {
+        width: 188px;
+        height: 188px;
+        border: 1px solid #DBDDE0;
+        object-fit: contain;
+      }
+
+      p {
+        font-family: "Manrope", sans-serif;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        color: #121212;
+        max-height: 100%;
+      }
+
+      iframe {
+        flex: 1;
+        border: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+        height: fit-content;
+        
+        img {
+          align-self: center;
+        }
+      }
+    }
+
+    .body {
+      padding-block: 44px;
+
+      @media (max-width: $lg) {
+        padding-block: 24px;
+      }
+
+      p {
+        font-family: "Manrope", sans-serif;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        color: #121212;
+
+        @media (max-width: $lg) {
+          font-size: 16px;
+          line-height: 20px;
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "routes": [
     { "src": "^/$", "dest": "/index.html" },
-    { "src": "^/catalog$", "dest": "/catalog.html" },
-    { "src": "^/company$", "dest": "/company.html" },
-    { "src": "^/about$", "dest": "/about.html" }
+    { "src": "^/catalog.html$", "dest": "/catalog.html" },
+    { "src": "^/company.html$", "dest": "/company.html" },
+    { "src": "^/about.html$", "dest": "/about.html" }
   ]
 }

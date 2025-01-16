@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay, Thumbs } from 'swiper/modules';
 import 'swiper/css';
 import './styles/main.scss';
 
@@ -24,5 +24,22 @@ const commentsSwiper = new Swiper('.comments-swiper', {
     prevEl: '.partner-comment-buttons .prev',
     nextEl: '.partner-comment-buttons .next',
     disabledClass: 'disabled',
+  }
+});
+
+const galleryThumbsSwiper = new Swiper('.gallery-thumbs-swiper', {
+  modules: [Thumbs],
+  watchSlidesProgress: true,
+  slidesPerView: 4,
+})
+
+const gallerySwiper = new Swiper('.gallery-swiper', {
+  modules: [Navigation, Autoplay, Thumbs],
+  slidesPerView: 1,
+  spaceBetween: 120,
+  speed: 800,
+  autoplay: true,
+  thumbs: {
+    swiper: galleryThumbsSwiper,
   }
 })
